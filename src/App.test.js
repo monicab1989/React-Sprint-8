@@ -1,8 +1,21 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+beforeEach(() => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+});
+
+test("renders login link", () => {
+  const linkElement = screen.getByText(/login/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test("renders star ships link", () => {
+  const linkElement = screen.getByText(/starships/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test("renders star ship link", () => {
+  const linkElement = screen.getByText(/starship/i);
   expect(linkElement).toBeInTheDocument();
 });
